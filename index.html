@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+#
+# TOOL NAME: formvalid
+# WRITTEN BY: tacree
+# DATE: 06-03-2019
+# REV:
+# First Worked:
+# Purpose: The purpose of this tool is to learn form validation via HTML/javascript
+#
+# REV LIST:
+# BY:
+# DATE:
+# CHANGES MADE:
+-->
+  <head>
+    <meta charset="utf-8">
+    <title> Javascript Form Validator </title>
+    <script>
+    function validateForm() {
+      var name = document.login.username.value;
+      var password = document.login.password.value;
+
+      if (name == null || name == "") {
+        alert("Name cannot be blank.");
+        return false;
+      } else if (password.length < 6) {
+        alert("Password must be at least 6 characters long!");
+        return false;
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <form name="login" action="submitted.html" onsubmit="return validateForm()" method="post">
+      username:<input type="text" name="username"/>
+      password:<input type="password" name="password"/>
+      <input type="submit" value="login"/>
+    </form>
+  </body>
+</html>
